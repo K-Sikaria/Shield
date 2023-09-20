@@ -4,36 +4,39 @@ import '../../app.css'
 import {Link} from 'react-router-dom'
 
 import logo from '../../LoginAssets/shieldLogo.jpg'
-import {FaUserShield} from 'react-icons/fa'
-import {BsFillShieldLockFill} from 'react-icons/bs'
+import bg from '../../LoginAssets/loginbg.png'
 import {AiOutlineSwapRight} from 'react-icons/ai'
+import {BsFillPersonFill} from 'react-icons/bs'
 
 const LoginPage = () => {
+  const backgroundStyle = {
+    backgroundImage: `url(${bg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
   return (
-    <div className='loginPage flex'>
+    <div className='loginPage flex' style={backgroundStyle}>
       <div className='container flex'>
 
         <div className="formDiv flex">
           <div className="headerDiv">
+            <h3>Login <BsFillPersonFill/></h3>
+            <p className='textDiv'>Hello, Welcome back!</p>
             <img src={logo} alt='Logo'/>
-            <h3>Welcome Back!</h3>
           </div>
 
           <form action='' className='form grid'>
             
             <div className="inputDiv">
-              <label htmlFor='username'>Username</label>
               <div className="input flex">
-                <FaUserShield className='icon'/>
-                <input type='text' id='username' placeholder='Enter Username'/>
+                <input type='text' id='username' placeholder='Email Address'/>
               </div>
             </div>
 
             <div className="inputDiv">
-              <label htmlFor='password'>Password</label>
               <div className="input flex">
-                <BsFillShieldLockFill className='icon'/>
-                <input type='password' id='password' placeholder='Enter Password'/>
+                <input type='password' id='password' placeholder='Password'/>
               </div>
             </div>
 
@@ -45,7 +48,11 @@ const LoginPage = () => {
             <a href='/home'>Home</a>
 
             <span className='forgotPassword'>
-              Forgot your password? <a href="">Click Here</a>
+              <a href="">Forgot password?</a>
+            </span>
+
+            <span className='registerBtn'>
+              Not a member yet ?  <a href="">Create Account</a>
             </span>
 
           </form>
