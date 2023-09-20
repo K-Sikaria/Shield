@@ -52,7 +52,7 @@ const LoginPage = () => {
             </span>
 
             <span className='registerBtn'>
-              Not a member yet ?  <a href="">Create Account</a>
+              Not a member yet ?  <a href='/register'>Create Account</a> {/* click here to navigate to register page*/}
             </span>
 
           </form>
